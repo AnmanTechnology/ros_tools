@@ -1,10 +1,10 @@
 #!/bin/bash
 # Apache License 2.0
-# Copyright (c) 2018, AUTOBOTICS CO., LTD.
+# Copyright (c) 2018, Anman Technology Co.,Ltd.
 
 echo ""
-echo "[Note] Target OS version  >>> Ubuntu 16.04 (xenial)"
-echo "[Note] Target ROS version >>> ROS Kinetic Kame"
+echo "[Note] Target OS version  >>> Ubuntu 18.04 (bionic)"
+echo "[Note] Target ROS version >>> ROS Melodic Morenia"
 echo "[Note] Catkin workspace   >>> $HOME/catkin_ws"
 echo ""
 echo "PRESS [ENTER] TO CONTINUE THE INSTALLATION"
@@ -12,8 +12,8 @@ echo "IF YOU WANT TO CANCEL, PRESS [CTRL] + [C]"
 read
 
 echo "[Set the target OS, ROS version and name of catkin workspace]"
-name_os_version=${name_os_version:="xenial"}
-name_ros_version=${name_ros_version:="kinetic"}
+name_os_version=${name_os_version:="bionic"}
+name_ros_version=${name_ros_version:="melodic"}
 name_catkin_workspace=${name_catkin_workspace:="catkin_ws"}
 
 echo "[Update the package lists and upgrade them]"
@@ -49,7 +49,7 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 
 echo "[Install the ros-desktop-full, all rqt plugin and so on]"
-sudo apt-get install -y ros-$name_ros_version-desktop-full ros-$name_ros_version-rqt-* gedit
+sudo apt-get install -y ros-$name_ros_version-desktop-full ros-$name_ros_version-rqt-* 
 
 echo "[Initialize rosdep]"
 if [ ! -e /etc/ros/rosdep/sources.list.d/20-default.list ]; then
@@ -59,7 +59,7 @@ rosdep update
 
 echo "[Environment setup and getting rosinstall]"
 source /opt/ros/$name_ros_version/setup.sh
-sudo apt-get install -y python-rosinstall clang-format-4.0 vim python-flake8
+sudo apt-get install -y python-rosinstall clang-format-6.0 vim python-flake8
 
 echo "[Make the catkin workspace and test the catkin_make]"
 mkdir -p $HOME/$name_catkin_workspace/src
