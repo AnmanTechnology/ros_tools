@@ -1,9 +1,9 @@
 #!/bin/bash
 # Apache License 2.0
-# Copyright (c) 2018, AUTOBOTICS CO., LTD.
+# Copyright (c) 2018, Anman Technology Co.,Ltd.
 
 echo ""
-echo "[Note] Target OS version  >>> Ubuntu 16.04 (xenial)"
+echo "[Note] Target OS version  >>> Ubuntu 16.04 Mate (xenial)"
 echo "[Note] Target ROS version >>> ROS Kinetic Kame"
 echo "[Note] Catkin workspace   >>> $HOME/catkin_ws"
 echo ""
@@ -48,8 +48,8 @@ echo "[Update the package lists and upgrade them]"
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
-echo "[Install the ros-base, gedit and vim]"
-sudo apt-get install -y ros-$name_ros_version-ros-base gedit vim
+echo "[Install the ros-base and vim]"
+sudo apt-get install -y ros-$name_ros_version-ros-base vim
 
 echo "[Initialize rosdep]"
 if [ ! -e /etc/ros/rosdep/sources.list.d/20-default.list ]; then
