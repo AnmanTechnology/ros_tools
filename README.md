@@ -39,4 +39,14 @@ $ sudo chmod +x ./install_ros_melodic.sh
 $ ./install_ros_melodic.sh
 ```
 
+
+### Install on Orange Pi (armbian)
+
+```
+$ wget https://raw.githubusercontent.com/AnmanTechnology/ros_tools/master/melodic/install_ros_melodic_opi.sh
+$ sudo chmod +x ./install_ros_melodic_opi.sh
+$ ./install_ros_melodic_opi.sh
+```
+
+
 หรือสามารถอ่านวิธีการติดตั้งได้ที่ [Anubiz Store - Install ROS Melodic on Ubuntu 18.04](http://www.anubiz.store/b/1)
