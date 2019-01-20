@@ -49,7 +49,7 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 
 echo "[Install the ros-base, gedit and vim]"
-sudo apt-get install -y ros-$name_ros_version-ros-base gedit vim
+sudo apt-get install -y ros-$name_ros_version-ros-base gedit vim git
 
 echo "[Initialize rosdep]"
 if [ ! -e /etc/ros/rosdep/sources.list.d/20-default.list ]; then
