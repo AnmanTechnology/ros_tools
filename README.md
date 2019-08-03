@@ -40,11 +40,11 @@ $ ./install_ros_melodic.sh
 ```
 
 
-### Install on Orange Pi (armbian)
+### Install on Armbian
 
 ```
-$ wget https://raw.githubusercontent.com/AnmanTechnology/ros_tools/master/melodic/install_ros_melodic_opi.sh
-$ sudo chmod +x ./install_ros_melodic_opi.sh
+$ wget https://raw.githubusercontent.com/AnmanTechnology/ros_tools/master/melodic/install_ros_melodic_armbian.sh
+$ sudo chmod +x ./install_ros_melodic_armbian.sh
 $ ./install_ros_melodic_opi.sh
 ```
 
