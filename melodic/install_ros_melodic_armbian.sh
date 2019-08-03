@@ -72,8 +72,8 @@ echo "[Set the ROS evironment]"
 sh -c "echo \"source /opt/ros/$name_ros_version/setup.bash\" >> ~/.bashrc"
 sh -c "echo \"source ~/$name_catkin_workspace/devel/setup.bash\" >> ~/.bashrc"
 
-sh -c "echo \"export ROS_MASTER_URI=http://localhost:11311\" >> ~/.bashrc"
-sh -c "echo \"export ROS_IP=localhost\" >> ~/.bashrc"
+sh -c "echo \"export ROS_MASTER_URI=http://127.0.0.1:11311\" >> ~/.bashrc"
+sh -c "echo \"export ROS_IP=127.0.0.1\" >> ~/.bashrc"
 
 source $HOME/.bashrc
 
