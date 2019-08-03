@@ -45,7 +45,7 @@ $ ./install_ros_melodic.sh
 ```
 $ wget https://raw.githubusercontent.com/AnmanTechnology/ros_tools/master/melodic/install_ros_melodic_armbian.sh
 $ sudo chmod +x ./install_ros_melodic_armbian.sh
-$ ./install_ros_melodic_opi.sh
+$ ./install_ros_melodic_armbian.sh
 ```
 
 
