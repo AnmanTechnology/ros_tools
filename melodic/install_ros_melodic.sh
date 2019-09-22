@@ -16,9 +16,9 @@ name_os_version=${name_os_version:="bionic"}
 name_ros_version=${name_ros_version:="melodic"}
 name_catkin_workspace=${name_catkin_workspace:="catkin_ws"}
 
-echo "[Update the package lists and upgrade them]"
-sudo apt-get update -y
-sudo apt-get upgrade -y
+#echo "[Update the package lists and upgrade them]"
+#sudo apt-get update -y
+#sudo apt-get upgrade -y
 
 echo "[Install build environment, the chrony, ntpdate and set the ntpupdate]"
 sudo apt-get install -y chrony ntpdate build-essential
@@ -26,17 +26,17 @@ sudo ntpdate ntp.ubuntu.com
 
 echo "[Add the ROS repository]"
 if [ ! -e /etc/apt/sources.list.d/ros-lastest.list ]; then
-    sudo sh -c "echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list"
+    sudo sh -c "echo \"deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main\" > /etc/apt/sources.list.d/ros-latest.list"
 fi
 
 echo "[Download the ROS keys]"
-roskey=`apt-key list | grep "ROS Builder"`
+roskey=`apt-key list | grep "Open Robotics"`
 if [ -z "$roskey" ]; then
-    sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 0xB01FA116
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 fi
 
 echo "[Check the ROS keys]"
-roskey=`apt-key list | grep "ROS Builder"`
+roskey=`apt-key list | grep "Open Robotics"`
 if [ -n "$roskey" ]; then
     echo "[ROS key exists in the list]"
 else
