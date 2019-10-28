@@ -30,13 +30,13 @@ if [ ! -e /etc/apt/sources.list.d/ros-lastest.list ]; then
 fi
 
 echo "[Download the ROS keys]"
-roskey=`apt-key list | grep "ROS Builder"`
+roskey=`apt-key list | grep "Open Robotics"`
 if [ -z "$roskey" ]; then
-    sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 fi
 
 echo "[Check the ROS keys]"
-roskey=`apt-key list | grep "ROS Builder"`
+roskey=`apt-key list | grep "Open Robotics"`
 if [ -n "$roskey" ]; then
     echo "[ROS key exists in the list]"
 else
@@ -59,7 +59,7 @@ rosdep update
 
 echo "[Environment setup and getting rosinstall]"
 source /opt/ros/$name_ros_version/setup.sh
-sudo apt-get install -y python-rosinstall clang-format-4.0 vim python-flake8 git
+sudo apt install -y python-rosinstall python-rosinstall-generator python-wstool build-essential
 
 echo "[Make the catkin workspace and test the catkin_make]"
 mkdir -p $HOME/$name_catkin_workspace/src
