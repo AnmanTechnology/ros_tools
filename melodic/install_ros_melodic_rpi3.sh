@@ -30,13 +30,13 @@ if [ ! -e /etc/apt/sources.list.d/ros-latest.list ]; then
 fi
 
 echo "[Download the ROS keys]"
-roskey=`apt-key list | grep "ROS Builder"`
+roskey=`apt-key list | grep "Open Robotics"`
 if [ -z "$roskey" ]; then
   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 fi
 
 echo "[Check the ROS keys]"
-roskey=`apt-key list | grep "ROS Builder"`
+roskey=`apt-key list | grep "Open Robotics"`
 if [ -n "$roskey" ]; then
     echo "[ROS key exists in the list]"
 else
@@ -49,7 +49,7 @@ sudo apt update -y
 sudo apt upgrade -y
 
 echo "[Install the ros-base and vim]"
-sudo apt install -y ros-$name_ros_version-ros-base vim
+sudo apt install -y ros-$name_ros_version-ros-base
 
 echo "[Initialize rosdep]"
 if [ ! -e /etc/ros/rosdep/sources.list.d/20-default.list ]; then
@@ -59,7 +59,7 @@ rosdep update
 
 echo "[Environment setup and getting rosinstall]"
 source /opt/ros/$name_ros_version/setup.sh
-sudo apt-get install -y python-rosinstall git
+sudo apt install -y python-rosinstall git clang-format-6.0 vim python-flake8 git python-rosinstall-generator python-wstool build-essential
 
 echo "[Make the catkin workspace and test the catkin_make]"
 mkdir -p $HOME/$name_catkin_workspace/src
